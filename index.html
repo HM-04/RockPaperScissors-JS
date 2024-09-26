@@ -46,9 +46,13 @@
                 console.log("Scissors beats paper. You lose")
                 computerScore = ++computerScore
            
+            } else if (playerTurn === computerTurn) {
+                console.log("You tie!")
             } else {
-                console.log("You tie")
+                console.log("Invalid Option. Please refresh and try again")
+                return
             }
+            
             
             
             console.log("Your score is: " + playerScore)
