@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+</head>
+<body>
+    <script>
+        let choice = ["Rock", "Paper", "Scissors"];
+ 
+        let playerScore = 0;
+        let computerScore = 0;
+
+        let playerTurn = prompt("Enter Rock, Paper or Scissors: ");
+        // playerTurn = playerTurn.toLowerCase()
+        let computerTurn = choice[Math.floor(Math.random() * choice.length)]; //generates a number from 0 to 2 and sets it as index for choice
+        computerTurn = computerTurn.toLowerCase()
+        
+        
+        console.log("You chose: " + playerTurn);
+        console.log("The computer chose: " + computerTurn);
+
+        function gameRound(computerTurn, playerTurn) {
+            if (playerTurn === "scissors" && computerTurn === "rock") {
+                console.log("Rock beats scissors. You lose")
+                computerScore = ++computerScore
+            
+            }   else if (playerTurn === "scissors" && computerTurn === "paper") {
+                console.log("Scissors beats paper. You win")
+                playerScore = ++playerScore
+           
+            }  else if (playerTurn === "rock" && computerTurn === "scissors") {
+                console.log("Rock beats scissors. You win")
+                playerScore = ++playerScore
+            
+            }  else if (playerTurn === "rock" && computerTurn === "paper") {
+                console.log("Paper beats rock. You lose")
+                computerScore = ++computerScore
+           
+            }   else if (playerTurn === "paper" && computerTurn === "rock") {
+                console.log("Paper beats rock. You win")
+                playerScore = ++playerScore
+            
+            }   else if (playerTurn === "paper" && computerTurn === "scissors") {
+                console.log("Scissors beats paper. You lose")
+                computerScore = ++computerScore
+           
+            } else {
+                console.log("You tie")
+            }
+            
+            
+            console.log("Your score is: " + playerScore)
+            console.log("The computer's score is: " + computerScore)
+            
+            if (computerScore > playerScore) {
+                console.log("You lose")
+            } else if (computerScore < playerScore) {
+                console.log("You win")
+            } else {
+                console.log("No Winner")
+            }
+        }
+
+        gameRound(computerTurn, playerTurn)
+    </script>
+</body>
+</html>
